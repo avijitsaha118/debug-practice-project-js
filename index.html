@@ -62,15 +62,15 @@
     <p>
     <h5 class="fw-bold"> Answer: </h5> JavaScript works <span class="fw-bold">synchronously</span> (Only when the
     execution of the
-    current line is completed it moves to the next line) and it is also <span class="fw-bold">single-threaded</span>
+    current line is completed it moves to next line) and it is also <span class="fw-bold">single-threaded</span>
     (Executes
     one command at a time in a
     specific order one after another serially) language.
     Every browser has a JavaScript built-in engine (e.g. Chrome use <span class="fw-bold">V8 engine</span>) that engine
-    is a program (written in C++) which goes through all the JavaScript code blindly and transforms it into something
+    is a program which goes through all the JavaScript code and transforms it into something
     that the
-    computer's CPU can understand and execute <span class="fw-bold">machine code</span>.
-    An interpreter (V8 uses an interpreter called <span class="fw-bold">Ignition</span>.) in the browser reads the
+    computer's CPU can understand and execute <span class="fw-bold">machine code</span>. Execute after an interpreter
+    (V8 uses an interpreter called <span class="fw-bold">Ignition</span>) in the browser reads the
     JavaScript code, then <span class="fw-bold">interprets</span> each line and
     runs it. More modern browsers
     use a technology known as Just-In-Time <span class="fw-bold">(JIT)</span> compilation, which compiles JavaScript to
@@ -82,11 +82,21 @@
 
     <h3 class="mt-3">What does JavaScript event loop do?</h3>
     <p>
-    <h5 class="fw-bold"> Answer: </h5>JavaScript has a runtime model based on an event loop, which is responsible for
-    executing the code, collecting and processing events, and executing queued sub-tasks.
-    The event loop is the secret behind JavaScript's asynchronous programming.
+    <h5 class="fw-bold"> Answer: </h5>We say, JavaScript is a combination of synchronies and asynchronies event.
+    Synchronies is after another, asynchronies is things like callbacks or promises and its event queue in synchronies
+    event that JavaScript has a runtime model based on an event loop.
+    A JavaScript runtime uses a message queue, which is a list of messages to be processed. Every message has an
+    associated function that gets called to handle the message.
+    At some point during the event loop, the runtime starts handling the messages on the queue, starting with the oldest
+    one. The message is removed from the queue and its corresponding function is called with the message as an input
+    parameter. As always, calling a function creates a new stack frame for that function's use.
 
+    An event loop is something that pulls stuff out of the queue and places it onto the function execution stack
+    whenever the function stack becomes empty. Here the callback function in the event queue has not yet run and is
+    waiting for its time into the stack when the SetTimeOut() is being executed and the Web API is making the mentioned
+    wait.
 
+    This is how javascript event loop works.
     </p>
 
     <footer></footer>
