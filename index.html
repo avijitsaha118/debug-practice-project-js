@@ -58,6 +58,28 @@
         </div>
     </main>
 
+    <h3 class="mt-3">How does JavaScript work?</h3>
+    <p>
+    <h5 class="fw-bold"> Answer: </h5> JavaScript works <span class="fw-bold">synchronously</span> (Only when the
+    execution of the
+    current line is completed it moves to the next line) and it is also <span class="fw-bold">single-threaded</span>
+    (Executes
+    one command at a time in a
+    specific order one after another serially) language.
+    Every browser has a JavaScript built-in engine (e.g. Chrome use <span class="fw-bold">V8 engine</span>) that engine
+    is a program (written in C++) which goes through all the JavaScript code blindly and transforms it into something
+    that the
+    computer's CPU can understand and execute <span class="fw-bold">machine code</span>.
+    An interpreter (V8 uses an interpreter called <span class="fw-bold">Ignition</span>.) in the browser reads the
+    JavaScript code, then <span class="fw-bold">interprets</span> each line and
+    runs it. More modern browsers
+    use a technology known as Just-In-Time <span class="fw-bold">(JIT)</span> compilation, which compiles JavaScript to
+    executable bytecode just as it is about to run.
+    When the transformation process happening , it needs to consider the specifications. Every time a function is <span
+        class="fw-bold">invoked</span>, it needs to figure all these things out called <span class="fw-bold">execution
+        context</span> (Rules are defined by a organization named Ecma International).
+    </p>
+
     <footer></footer>
 
     <!-- add javascript  file  -->
